@@ -1,0 +1,83 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "Workspace",
+        "bindings": {
+            // "shift shift": "file_finder::Toggle"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-c": "editor::Copy",
+            "ctrl-v": "editor::Paste",
+            "ctrl-a": "editor::SelectAll"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == visual",
+        "bindings": {
+            "ctrl-c": "editor::Copy",
+            "g c":
+                // Zakomentování označených řádků
+                "editor::ToggleComments"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            // "j k": "vim::NormalBefore"
+            "ctrl-v": "editor::Paste"
+        }
+    },
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            // --- NAVIGACE ---
+            "space f f": "file_finder::Toggle", // Jako Telescope find_files
+            "space e": "pane::RevealInProjectPanel", // Jako nvim-tree / Neo-tree
+            "space /": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
+
+            // --- OKNA A BUFFERY ---
+            "space b d": "pane::CloseActiveItem", // Zavřít tab (Buffer delete)
+            "space w v": "pane::SplitVertical",
+            "space w s": "pane::SplitHorizontal",
+
+            // --- LSP & KÓD (GOTH stack) ---
+            "space l r": "editor::Rename", // Rename (jako v JetBrains)
+            "space l a": "editor::ToggleCodeActions", // Code Actions
+            "space l f": "editor::Format", // Formátování
+            "g d": "editor::GoToDefinition",
+            "g i": "editor::GoToImplementation",
+
+            // --- TERMINÁL ---
+            "space f t": "terminal_panel::Toggle", // Rychlý terminál
+
+            "H": "pane::ActivatePrevItem",
+            "L": "pane::ActivateNextItem"
+        }
+    },
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            // Normální mód: gcc pro jeden řádek
+            "g c c": "editor::ToggleComments",
+
+            // --- HLEDÁNÍ V SOUBORU (Jako Ctrl+F / Ctrl+R v IntelliJ) ---
+            "space s f": "buffer_search::Deploy",
+
+            // "space s r": "buffer_search::Replace",
+
+            // --- HLEDÁNÍ V PROJEKTU (Jako Ctrl+Shift+F / Ctrl+Shift+R) ---
+            "space s p": "pane::DeploySearch"
+
+            // "space s h": "pane::DeployReplace"
+        }
+    }
+]

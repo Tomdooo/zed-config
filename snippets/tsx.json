@@ -1,0 +1,63 @@
+{
+  "Juan Content Block": {
+    "prefix": "jb juanblock",
+    "body": [
+      "import type { EdeeBlockProps } from '@edeeone/edee-stage/types';",
+      "import { getI18n } from '@edeeone/juan-core/i18n/getI18n';",
+      "import type { ComponentBaseProps } from '@edeeone/juan-core/types';",
+      "import type { Block$1ClassNames } from './Block$1.styles';",
+      "import { block$1ClassNames } from './Block$1.styles';",
+      "",
+      "export type Block$1Props = EdeeBlockProps &",
+      "  ComponentBaseProps<Block$1ClassNames> & {};",
+      "",
+      "export const Block$1 = async function ({",
+      "  styles,",
+      "  design,",
+      "  mainText,",
+      "  blockTexts,",
+      "  blockAttrs,",
+      "  ...props",
+      "}: Block$1Props) {",
+      "  const finalStyles = block$1ClassNames(styles, design);",
+      "  const { t } = await getI18n('Block$1');",
+      "",
+      "  return <>",
+      "    <section className={finalStyles.Block$1}>{t('text')}$0</section>",
+      "  </>",
+      "};"
+    ]
+  },
+  "Juan Component": {
+    "prefix": "jc juancomp",
+    "body": [
+      "import type { EdeeBlockProps } from '@edeeone/edee-stage/types';",
+      "import { getI18n } from '@edeeone/juan-core/i18n/getI18n';",
+      "import type { ComponentBaseProps } from '@edeeone/juan-core/types';",
+      "import type { $1ClassNames } from './$1.styles';",
+      "import { $2ClassNames } from './$1.styles';",
+      "",
+      "export type $1Props = EdeeBlockProps &",
+      "  ComponentBaseProps<$1ClassNames> & {};",
+      "",
+      "export const $1 = async function ({",
+      "  styles,",
+      "  design,",
+      "  mainText,",
+      "  blockTexts,",
+      "  blockAttrs,",
+      "  ...props",
+      "}: $1Props) {",
+      "  const finalStyles = $2ClassNames(styles, design);",
+      "  const { t } = await getI18n('$1');",
+      "",
+      "  return (",
+      "    <>",
+      "      <section className={finalStyles.$1}>{t('text')}$0</section>",
+      "    </>",
+      "  );",
+      "};",
+      ""
+    ]
+  }
+}

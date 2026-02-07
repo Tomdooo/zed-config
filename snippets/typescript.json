@@ -1,0 +1,46 @@
+{
+  "Juan Component Styles": {
+    "prefix": "jcs juancompstyles",
+    "body": [
+      "import type { Classnames, UseClassNames } from '@edeeone/juan-core/hooks/useFinalClassnames';",
+      "import { useFinalClassnames } from '@edeeone/juan-core/hooks/useFinalClassnames';",
+      "",
+      "export const $2DefaultClassNames = /* tw */ {",
+      "  $1: `$0`,",
+      "};",
+      "",
+      "export type $1ClassNames = Classnames<typeof $2DefaultClassNames>;",
+      "",
+      "export const $2ClassNames: UseClassNames<$1ClassNames> =",
+      "  function (...args) {",
+      "    // eslint-disable-next-line react-hooks/rules-of-hooks",
+      "    return useFinalClassnames<$1ClassNames>(",
+      "      $2DefaultClassNames,",
+      "      ...args",
+      "    );",
+      "  };"
+    ]
+  },
+  "Juan Content Block Styles": {
+    "prefix": "jbs juanblockstyles",
+    "body": [
+      "import type { Classnames, UseClassNames } from '@edeeone/juan-core/hooks/useFinalClassnames';",
+      "import { useFinalClassnames } from '@edeeone/juan-core/hooks/useFinalClassnames';",
+      "",
+      "export const block$1DefaultClassNames = /* tw */ {",
+      "  Block$1: `$0`,",
+      "};",
+      "",
+      "export type Block$1ClassNames = Classnames<typeof block$1DefaultClassNames>;",
+      "",
+      "export const block$1ClassNames: UseClassNames<Block$1ClassNames> =",
+      "  function (...args) {",
+      "    // eslint-disable-next-line react-hooks/rules-of-hooks",
+      "    return useFinalClassnames<Block$1ClassNames>(",
+      "      block$1DefaultClassNames,",
+      "      ...args",
+      "    );",
+      "  };"
+    ]
+  }
+}
