@@ -59,5 +59,13 @@
       "};",
       ""
     ]
+  },
+  "Function": {
+    "prefix": "func",
+    "body": ["function $1($2) {", "  $0", "}"]
+  },
+  "Arrow Function": {
+    "prefix": "afunc",
+    "body": ["const $1 = ($2) => {", "  $0", "}"]
   }
 }

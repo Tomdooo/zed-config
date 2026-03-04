@@ -7,8 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "edit_predictions": {
+        "provider": "copilot"
+    },
+    "disable_ai": false,
     "git_panel": {
-        "tree_view": false,
+        "tree_view": true,
         "button": true
     },
     "use_system_window_tabs": false,
@@ -35,7 +39,53 @@
         {
             "distro_name": "Ubuntu-22.04",
             "user": null,
-            "projects": []
+            "projects": [
+                {
+                    "paths": [
+                        "/home/lintomas/personal_projects/go-playground"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/k3d-local"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_bug/eshop"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_cae/eshop"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_deco/eshop/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_iscare/www2023/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_mos/moser/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_rako/rako/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/home/lintomas/projects/p_prj/p_ult/warehouse1_2/./"
+                    ]
+                }
+            ]
         }
     ],
     "icon_theme": "Base Charmed Icons",
@@ -108,6 +158,7 @@
         "toggle_relative_line_numbers": true,
         "use_system_clipboard": "never"
     },
+    "vertical_scroll_margin": 12,
     "which_key": {
         "delay_ms": 0,
         "enabled": true

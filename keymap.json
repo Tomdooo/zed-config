@@ -9,10 +9,10 @@
     {
         "context": "Workspace",
         "bindings": {
-            "shift shift": "file_finder::Toggle",
+            "shift shift": "file_finder::Toggle"
             // Pokud space e zmáčkneš kdekoli jinde (nebo první selže),
             // prostě to přepne focus do levého panelu
-            "space e": "project_panel::ToggleFocus"
+            // "space e": "project_panel::ToggleFocus"
             // Klasické JetBrains zkratky pro hledání a nahrazování v celém projektu
             // "ctrl-shift-f": "pane::DeploySearch",
             // "ctrl-shift-r": "pane::DeployReplace"
