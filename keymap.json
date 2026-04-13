@@ -7,9 +7,16 @@
 // from the command palette.
 [
     {
-        "context": "Workspace",
+        "context": "Workspace && !Terminal && !AssistantPanel && !AgentPanel",
         "bindings": {
-            "shift shift": "file_finder::Toggle"
+            "shift shift": "file_finder::Toggle",
+            "space p f": "file_finder::Toggle",
+            "space p /": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
+            "space p s": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
+
+            // --- TERMINÁL ---
+            "space t": "terminal_panel::ToggleFocus" // Rychlý terminál
+
             // Pokud space e zmáčkneš kdekoli jinde (nebo první selže),
             // prostě to přepne focus do levého panelu
             // "space e": "project_panel::ToggleFocus"
@@ -32,7 +39,11 @@
             "ctrl-c": "editor::Copy",
             "g c":
                 // Zakomentování označených řádků
-                "editor::ToggleComments"
+                "editor::ToggleComments",
+            "tab": "vim::Indent",
+            "shift-tab": "vim::Outdent",
+            ">": "editor::Indent",
+            "<": "editor::Outdent"
         }
     },
     {
@@ -46,9 +57,8 @@
         "context": "Editor && VimControl && !VimWaiting && !menu",
         "bindings": {
             // --- NAVIGACE ---
-            "space f f": "file_finder::Toggle", // Jako Telescope find_files
+            // "space f f": "file_finder::Toggle", // Jako Telescope find_files
             "space e": "pane::RevealInProjectPanel", // Jako nvim-tree / Neo-tree
-            "space /": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
 
             // --- OKNA A BUFFERY ---
             "space b d": "pane::CloseActiveItem", // Zavřít tab (Buffer delete)
@@ -61,28 +71,21 @@
             "space l f": "editor::Format", // Formátování
             "g d": "editor::GoToDefinition",
             "g i": "editor::GoToImplementation",
-
-            // --- TERMINÁL ---
-            "space f t": "terminal_panel::Toggle", // Rychlý terminál
-
             "H": "pane::ActivatePreviousItem",
             "L": "pane::ActivateNextItem"
+
+            // Normální mód: gcc pro jeden řádek
+            // "g c c": "editor::ToggleComments"
         }
     },
     {
-        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "context": "Terminal",
         "bindings": {
-            // Normální mód: gcc pro jeden řádek
-            "g c c": "editor::ToggleComments",
-
-            // --- HLEDÁNÍ V SOUBORU (Jako Ctrl+F / Ctrl+R v IntelliJ) ---
-            "space s f": "buffer_search::Deploy",
-            // "space s r": "search::ToggleReplace",
-
-            // --- HLEDÁNÍ V PROJEKTU (Jako Ctrl+Shift+F / Ctrl+Shift+R) ---
-            "space s p": "pane::DeploySearch"
-
-            // "space s h": "pane::DeployReplace"
+            "ctrl-notsign": "editor::ToggleFocus", // "terminal_panel::ToggleFocus",
+            "ctrl-shift-t": "workspace::NewTerminal",
+            "ctrl-shift-l": "pane::ActivateNextItem",
+            "ctrl-shift-h": "pane::ActivatePreviousItem",
+            "ctrl-shift-q": "pane::CloseActiveItem"
         }
     }
 ]
