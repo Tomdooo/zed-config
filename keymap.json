@@ -6,86 +6,86 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-    {
-        "context": "Workspace && !Terminal && !AssistantPanel && !AgentPanel",
-        "bindings": {
-            "shift shift": "file_finder::Toggle",
-            "space p f": "file_finder::Toggle",
-            "space p /": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
-            "space p s": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
+  {
+    "context": "Editor && vim_mode == normal && !menu && !Terminal && !AssistantPanel && !AgentPanel",
+    "bindings": {
+      "shift shift": "file_finder::Toggle",
+      "space p f": "file_finder::Toggle",
+      "space p /": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
+      "space p s": "pane::DeploySearch", // Hledání v projektu (jako Live Grep)
 
-            // --- TERMINÁL ---
-            "space t": "terminal_panel::ToggleFocus" // Rychlý terminál
+      // --- TERMINÁL ---
+      "space t": "terminal_panel::ToggleFocus", // Rychlý terminál
 
-            // Pokud space e zmáčkneš kdekoli jinde (nebo první selže),
-            // prostě to přepne focus do levého panelu
-            // "space e": "project_panel::ToggleFocus"
-            // Klasické JetBrains zkratky pro hledání a nahrazování v celém projektu
-            // "ctrl-shift-f": "pane::DeploySearch",
-            // "ctrl-shift-r": "pane::DeployReplace"
-        }
+      // Pokud space e zmáčkneš kdekoli jinde (nebo první selže),
+      // prostě to přepne focus do levého panelu
+      // "space e": "project_panel::ToggleFocus"
+      // Klasické JetBrains zkratky pro hledání a nahrazování v celém projektu
+      // "ctrl-shift-f": "pane::DeploySearch",
+      // "ctrl-shift-r": "pane::DeployReplace"
     },
-    {
-        "context": "Editor",
-        "bindings": {
-            // "ctrl-c": "editor::Copy",
-            // "ctrl-v": "editor::Paste",
-            "ctrl-a": "editor::SelectAll"
-        }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "ctrl-c": "editor::Copy",
+      // "ctrl-v": "editor::Paste",
+      "ctrl-a": "editor::SelectAll",
     },
-    {
-        "context": "Editor && vim_mode == visual",
-        "bindings": {
-            "ctrl-c": "editor::Copy",
-            "g c":
-                // Zakomentování označených řádků
-                "editor::ToggleComments",
-            "tab": "vim::Indent",
-            "shift-tab": "vim::Outdent",
-            ">": "editor::Indent",
-            "<": "editor::Outdent"
-        }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "g c":
+        // Zakomentování označených řádků
+        "editor::ToggleComments",
+      "tab": "vim::Indent",
+      "shift-tab": "vim::Outdent",
+      ">": "editor::Indent",
+      "<": "editor::Outdent",
     },
-    {
-        "context": "Editor && vim_mode == insert",
-        "bindings": {
-            // "j k": "vim::NormalBefore"
-            "ctrl-v": "editor::Paste"
-        }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+      "ctrl-v": "editor::Paste",
     },
-    {
-        "context": "Editor && VimControl && !VimWaiting && !menu",
-        "bindings": {
-            // --- NAVIGACE ---
-            // "space f f": "file_finder::Toggle", // Jako Telescope find_files
-            "space e": "pane::RevealInProjectPanel", // Jako nvim-tree / Neo-tree
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // --- NAVIGACE ---
+      // "space f f": "file_finder::Toggle", // Jako Telescope find_files
+      "space e": "pane::RevealInProjectPanel", // Jako nvim-tree / Neo-tree
 
-            // --- OKNA A BUFFERY ---
-            "space b d": "pane::CloseActiveItem", // Zavřít tab (Buffer delete)
-            "space w v": "pane::SplitVertical",
-            "space w s": "pane::SplitHorizontal",
+      // --- OKNA A BUFFERY ---
+      "space b d": "pane::CloseActiveItem", // Zavřít tab (Buffer delete)
+      "space w v": "pane::SplitVertical",
+      "space w s": "pane::SplitHorizontal",
 
-            // --- LSP & KÓD (GOTH stack) ---
-            "space l r": "editor::Rename", // Rename (jako v JetBrains)
-            "space l a": "editor::ToggleCodeActions", // Code Actions
-            "space l f": "editor::Format", // Formátování
-            "g d": "editor::GoToDefinition",
-            "g i": "editor::GoToImplementation",
-            "H": "pane::ActivatePreviousItem",
-            "L": "pane::ActivateNextItem"
+      // --- LSP & KÓD (GOTH stack) ---
+      "space l r": "editor::Rename", // Rename (jako v JetBrains)
+      "space l a": "editor::ToggleCodeActions", // Code Actions
+      "space l f": "editor::Format", // Formátování
+      "g d": "editor::GoToDefinition",
+      "g i": "editor::GoToImplementation",
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem",
 
-            // Normální mód: gcc pro jeden řádek
-            // "g c c": "editor::ToggleComments"
-        }
+      // Normální mód: gcc pro jeden řádek
+      // "g c c": "editor::ToggleComments"
     },
-    {
-        "context": "Terminal",
-        "bindings": {
-            "ctrl-notsign": "editor::ToggleFocus", // "terminal_panel::ToggleFocus",
-            "ctrl-shift-t": "workspace::NewTerminal",
-            "ctrl-shift-l": "pane::ActivateNextItem",
-            "ctrl-shift-h": "pane::ActivatePreviousItem",
-            "ctrl-shift-q": "pane::CloseActiveItem"
-        }
-    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-notsign": "editor::ToggleFocus", // "terminal_panel::ToggleFocus",
+      "ctrl-shift-t": "workspace::NewTerminal",
+      "ctrl-shift-l": "pane::ActivateNextItem",
+      "ctrl-shift-h": "pane::ActivatePreviousItem",
+      "ctrl-shift-q": "pane::CloseActiveItem",
+    },
+  },
 ]

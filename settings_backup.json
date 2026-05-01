@@ -7,26 +7,175 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "agent_ui_font_size": 16.0,
+    "outline_panel": {
+        "dock": "left"
+    },
+    "collaboration_panel": {
+        "dock": "left"
+    },
     "wsl_connections": [
         {
             "distro_name": "Ubuntu-22.04",
             "user": null,
-            "projects": []
+            "projects": [
+                {
+                    "paths": ["/home/lintomas/projects/p_prj/p_mila/eshop"]
+                },
+                {
+                    "paths": ["/home/lintomas/projects/p_prj/p_ryor/ryor"]
+                }
+            ]
         }
     ],
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry"
+        }
+    },
+    "agent": {
+        "dock": "right",
+        "default_profile": "write",
+        "default_model": {
+            "effort": "high",
+            "provider": "google",
+            "model": "gemini-2.5-flash",
+            "enable_thinking": false
+        },
+        "favorite_models": [
+            {
+                "provider": "google",
+                "model": "gemini-2.5-flash",
+                "enable_thinking": false
+            },
+            {
+                "provider": "google",
+                "model": "gemini-3-flash-preview",
+                "enable_thinking": false
+            },
+            {
+                "provider": "google",
+                "model": "gemini-3.1-pro-preview",
+                "enable_thinking": false
+            },
+            {
+                "provider": "google",
+                "model": "gemini-2.5-pro",
+                "enable_thinking": false
+            }
+        ],
+        "model_parameters": [],
+        "enable_feedback": false,
+        "commit_message_model": {
+            "provider": "google",
+            "model": "gemini-2.5-flash"
+        }
+    },
+    "project_panel": {
+        "dock": "left",
+        "auto_fold_dirs": false
+    },
+    "edit_predictions": {
+        "provider": "none"
+    },
+    "disable_ai": false,
+    "git_panel": {
+        "dock": "left",
+        "tree_view": true,
+        "button": true
+    },
+    "use_system_window_tabs": false,
+    "bottom_dock_layout": "contained",
+    "preview_tabs": {
+        "enable_preview_from_file_finder": false
+    },
+    "tabs": {
+        "close_position": "right",
+        "file_icons": true,
+        "git_status": true
+    },
+    "tab_bar": {
+        "show_pinned_tabs_in_separate_row": false,
+        "show": true
+    },
+    "title_bar": {
+        "show_menus": false,
+        "show_branch_icon": true
+    },
+    "minimum_contrast_for_highlights": 50.0,
+    "agent_ui_font_size": 16.0,
     "icon_theme": "Base Charmed Icons",
     "vim_mode": true,
     "base_keymap": "JetBrains",
     "buffer_font_size": 15.0,
     "theme": {
         "mode": "dark",
-        "light": "One Light",
-        "dark": "Tokyo Night"
+        "light": "Catppuccin Latte",
+        "dark": "Catppuccin Mocha"
     },
-    "relative_line_numbers": true,
+    "theme_overrides": {
+        "Catppuccin Mocha": {
+            "syntax": {
+                // ERROR
+                "property.comment.error": {
+                    "color": "#1a1b26", // Tmavé pozadí Tokyo Night (písmo v rámečku)
+                    "background_color": "#f7768e" // Červená z Tokyo Night (rámeček)
+                },
+                "property.comment.error.text": {
+                    "color": "#f7768e",
+                    "font_style": "italic"
+                },
+                "property.comment.error.prefix": {
+                    "color": "#565f89"
+                },
+                // "property.comment.error.bracket": {},
+                // "property.comment.error.user": {},
+                // WARN
+                "keyword.comment.warn": {
+                    "color": "#1a1b26", // Tmavé pozadí Tokyo Night (písmo v rámečku)
+                    "background_color": "#e0af68" // Červená z Tokyo Night (rámeček)
+                },
+                "keyword.comment.warn.text": {
+                    "color": "#e0af68",
+                    "font_style": "italic"
+                },
+                "keyword.comment.warn.prefix": {
+                    "color": "#565f89"
+                },
+                // INFO
+                "string.comment.info": {
+                    "color": "#1a1b26",
+                    "background_color": "#7aa2f7"
+                },
+                "string.comment.info.text": {
+                    "color": "#7aa2f7",
+                    "font_style": "italic"
+                },
+                "string.comment.info.prefix": {
+                    "color": "#565f89"
+                },
+                // TODO
+                "constant.comment.todo": {
+                    "color": "#1a1b26",
+                    "background_color": "#9ece6a"
+                },
+                "constant.comment.todo.text": {
+                    "color": "#9ece6a",
+                    "font_style": "italic"
+                },
+                "constant.comment.todo.prefix": {
+                    "color": "#565f89"
+                }
+            }
+        }
+    },
+    "vim": {
+        "highlight_on_yank_duration": 500,
+        "toggle_relative_line_numbers": true,
+        "use_system_clipboard": "never"
+    },
+    "vertical_scroll_margin": 12,
     "which_key": {
-        "delay_ms": 200,
+        "delay_ms": 0,
         "enabled": true
     }
 }
